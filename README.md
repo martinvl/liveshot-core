@@ -232,8 +232,3 @@ RingTargetRenderer and scaled with RingTargetScaler.
 * DFS 200m target: `require('liveshot-core').targets.NO_DFS_200M`
 * DFS 100m target: `require('liveshot-core').targets.NO_DFS_100M`
 * DFS 15m target: `require('liveshot-core').targets.NO_DFS_15M`
-
-
-**Todo**
-* fix scale/size naming
-* fix roundoff error when worst shot is a 2
