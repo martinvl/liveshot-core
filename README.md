@@ -220,10 +220,28 @@ var target = new RingTargetBuilder()
 
 List of implemented targets
 ===========================
-All these targets are accesible through the `targets` object on the root object
-of the package.
+All of the following targets are accesible through the `targets` object on the
+root object of the package. You can either access the directly using their
+`targetID` as a key:
 ```javascript
 var target = require('liveshot-core').targets.NO_DFS_300M;
+```
+
+Or by using the convenience method `getTarget`:
+```javascript
+var target = require('liveshot-core').targets.getTarget('NO_DFS_300M');
+```
+
+When targets are needed to setup scalers and renderers, the convenience methods
+`getRenderer` and `getScaler` should be used. These will create new instances
+of `Renderer` and `Scaler` (or the appropriate subclass of these), and set them
+up with the correct target:
+```javascript
+var LiveShot = require('liveshot-core');
+
+var targetID = 'NO_DFS_100M';
+var renderer = LiveShot.targets.getRenderer(targetID);
+var scaler LiveShot.targets.getScaler(targetID);
 ```
 
 DFS range targets

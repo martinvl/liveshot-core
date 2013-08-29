@@ -12,6 +12,7 @@ document.body.appendChild(canvas);
 var ctx = canvas.getContext('2d');
 var rect = {x:0, y:0, width:width, height:height};
 
+/*
 var target = LiveShot.targets.NO_DFS_100M;
 var resultBuilder = new ResultBuilder();
 
@@ -24,6 +25,18 @@ var scaler = new LiveShot.RingTargetScaler()
 var shotRenderer = new LiveShot.ShotRenderer()
     .setContext(ctx)
     .setRect(rect);
+    */
+
+var targetID = 'NO_DFS_100M';
+var targetRenderer = new LiveShot.targets.getRenderer(targetID)
+    .setContext(ctx)
+    .setRect(rect);
+var scaler = new LiveShot.targets.getScaler(targetID);
+var shotRenderer = new LiveShot.ShotRenderer()
+    .setContext(ctx)
+    .setRect(rect);
+
+var resultBuilder = new ResultBuilder();
 
 function render() {
     ctx.clearRect(rect.x, rect.y, rect.width, rect.height);
