@@ -222,13 +222,18 @@ List of implemented targets
 ===========================
 All these targets are accesible through the `targets` object on the root object
 of the package.
+```javascript
+var target = require('liveshot-core').targets.NO_DFS_300M;
+```
 
 DFS range targets
 -----------------
 All DFS range targets are ring targets and should be rendered with
 RingTargetRenderer and scaled with RingTargetScaler.
 
-* DFS 300m target: `require('liveshot-core').targets.NO_DFS_300M`
-* DFS 200m target: `require('liveshot-core').targets.NO_DFS_200M`
-* DFS 100m target: `require('liveshot-core').targets.NO_DFS_100M`
-* DFS 15m target: `require('liveshot-core').targets.NO_DFS_15M`
+This list show the targetID key in `targets` object, and description.
+
+* `NO_DFS_300M`: DFS 300m target
+* `NO_DFS_200M`: DFS 200m target
+* `NO_DFS_100M`: DFS 100m target
+* `NO_DFS_15M`: DFS 15m target
