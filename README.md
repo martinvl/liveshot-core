@@ -27,11 +27,11 @@ renderer.setContext(ctx)
 **Public properties**  
 Access and modify directly or through setter methods.
 * < _CanvasRenderingContext2D_ >`context`, the canvas 2d drawing context to render into
-* < _OBJECT_ >`RECT`  
-  DESCRIBES THE RECTANGLE TO RENDER WITHIN
-    * < _NUMBER_ >`X`
-    * < _NUMBER_ >`Y`
-    * < _NUMBER_ >`WIDTH`
+* < _object_ >`rect`  
+  Describes the rectangle to render within
+    * < _number_ >`x`
+    * < _number_ >`y`
+    * < _number_ >`width`
     * < _number_ >`height`
 
 **Public methods**
