@@ -114,7 +114,8 @@ renderer.setContext(ctx)
 **Public properties**  
 * < _object_ >`style`
     * < _number_ >`gaugeSize`
-    * < _string_ >`gaugeColor`
+    * < _string_ >`gaugeColor`  
+        default value is `.015`
     * < _string_ >`markerColor`
     * < _string_ >`lastMarkerColor`
 * < _object_ >`shots`, should be object created by ShotListBuilder

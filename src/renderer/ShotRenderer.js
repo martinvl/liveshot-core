@@ -37,7 +37,7 @@ ShotRenderer.prototype.initialize = function () {
     this.scale = 1;
     this.shots = {};
     this.style = {
-        gaugeSize:1,
+        gaugeSize:.015,
         gaugeColor:'rgb(0, 0, 0)',
         markerColor:'rgb(0, 255, 0)',
         lastMarkerColor:'rgb(255, 0, 0)'

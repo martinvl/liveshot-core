@@ -23,7 +23,6 @@ var scaler = new LiveShot.RingTargetScaler()
     .setTarget(target);
 var shotRenderer = new LiveShot.ShotRenderer()
     .setContext(ctx)
-    .setStyle({gaugeSize:.015})
     .setRect(rect);
 
 function render() {
