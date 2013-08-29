@@ -113,13 +113,17 @@ renderer.setContext(ctx)
 
 **Public properties**  
 * < _object_ >`style`
-    * < _number_ >`gaugeSize`
+    * < _number_ >`gaugeSize`  
+            default value is `.015`
     * < _string_ >`gaugeColor`  
-        default value is `.015`
-    * < _string_ >`markerColor`
-    * < _string_ >`lastMarkerColor`
+            default value is `'rgb(0, 0, 0)'`
+    * < _string_ >`markerColor`  
+            default value is `'rgb(0, 255, 0)'`
+    * < _string_ >`lastMarkerColor`  
+            default value is `'rgb(255, 0, 0)'`
 * < _object_ >`shots`, should be object created by ShotListBuilder
-* < _number_ >`scale`, the scale (zoom) at which to render
+* < _number_ >`scale`, the scale (zoom) at which to render  
+        default value is `1`
 
 **Setters**  
 Return pointer to the renderer for convenience.
