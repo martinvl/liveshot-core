@@ -169,12 +169,6 @@ Return pointer to the renderer for convenience.
 * **setTarget**(< _object_ >target) - ( _RingTargetRenderer_ )  
     `target` should be object created by RingTargetBuilder
 
-List of available subclasses, implementing various target types:
-* **DFSTenRingTargetRenderer**  
-    General renderer for DFS 100m, 200m and 300m targets
-* **DFS15mTargetRenderer**  
-    Renderer for DFS 15m target
-
 RingTargetScaler
 ----------------
 Super class for various implementations of ring-target scalers. Inherits all
@@ -192,18 +186,6 @@ var scale = new RingTargetScaler()
 **Public methods**  
 * **setTarget**(< _object_ >target) - ( _RingTargetScaler_ )  
     `target` should be object created by RingTargetBuilder
-
-List of available subclasses, implementing scaling for various target types:
-* **DFSTenRingTargetScaler**  
-    General scaler for DFS 100m, 200m and 300m targets
-* **DFS15mTargetScaler**  
-    Scaler for DFS 15m target
-
-```javascript
-var scale = new DFSTenRingTargetScaler()
-    .setShots(shots)
-    .getScale();
-```
 
 RingTargetBuilder
 -----------------
