@@ -134,8 +134,8 @@ Return pointer to the renderer for convenience.
 * **setScale**(< _number_ >scale) - ( _ShotRenderer_ )
 
 
-Tools for ring targets
-======================
+Components for ring targets
+===========================
 RingTargetRenderer
 ------------------
 Super class for various implementations of ring-target renderers. Inherits all
