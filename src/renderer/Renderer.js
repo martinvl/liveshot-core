@@ -11,7 +11,7 @@ module.exports = Renderer;
 
 // --- External API ---
 Renderer.prototype.render = function () {
-    const ctx = this.context;
+    var ctx = this.context;
 
     ctx.save();
 
