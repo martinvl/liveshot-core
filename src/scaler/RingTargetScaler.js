@@ -18,11 +18,17 @@ RingTargetScaler.prototype.setTarget = function (target) {
 RingTargetScaler.prototype.getScale = function () {
     // find the largest distance from center to shot
     var maxDist = 0;
+    var numShots = 0;
     for (var idx in this.shots) {
         var shot = this.shots[idx];
         var r = Math.sqrt(shot.x*shot.x + shot.y*shot.y);
 
         maxDist = Math.max(maxDist, r);
+        ++numShots;
+    }
+
+    if (numShots == 0) {
+        maxDist = .2;
     }
 
     // find rings containing all shots
