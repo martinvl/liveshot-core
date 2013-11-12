@@ -1,4 +1,4 @@
-var Renderer = require('../Renderer');
+var Renderer = require('./Renderer');
 
 function TargetRenderer() {
     Renderer.prototype.constructor.apply(this);
