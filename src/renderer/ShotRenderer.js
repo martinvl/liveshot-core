@@ -1,5 +1,7 @@
 var Renderer = require('./Renderer');
 
+var MARKER_SIZE = 1/20;
+
 function ShotRenderer() {
     Renderer.prototype.constructor.apply(this);
 
@@ -78,9 +80,21 @@ ShotRenderer.prototype.drawShot = function (shot, markerColor) {
     ctx.scale(scale, scale);
     ctx.translate(shot.x, shot.y);
 
+    if (this.style.gaugeSize > .7*MARKER_SIZE) {
+        this.renderShotWithoutGauge(shot, markerColor, scale);
+    } else {
+        this.renderShotWithGauge(shot, markerColor);
+    }
+
+    ctx.restore();
+};
+
+ShotRenderer.prototype.renderShotWithGauge = function (shot, markerColor) {
+    var ctx = this.context;
+
     // draw marker
     ctx.beginPath();
-    ctx.arc(0, 0, 1/20, 0, Math.PI*2, true);
+    ctx.arc(0, 0, MARKER_SIZE, 0, Math.PI*2, true);
     ctx.closePath();
 
     ctx.fillStyle = markerColor;
@@ -93,6 +107,22 @@ ShotRenderer.prototype.drawShot = function (shot, markerColor) {
 
     ctx.fillStyle = this.style.gaugeColor;
     ctx.fill();
+};
+
+ShotRenderer.prototype.renderShotWithoutGauge = function (shot, markerColor, scale) {
+    var ctx = this.context;
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, this.style.gaugeSize, 0, Math.PI*2, true);
+    ctx.closePath();
+
+    ctx.fillStyle = markerColor;
+    ctx.fill();
+
+    ctx.scale(1/scale, 1/scale);
+    ctx.strokeStyle = this.style.gaugeColor;
+    ctx.stroke();
 
     ctx.restore();
 };
