@@ -1,6 +1,6 @@
 {
     "name":"liveshot-core",
-    "version":"0.1.0b-8",
+    "version":"0.1.0b-9",
     "main":"index.js",
     "description":"Core renderers for LiveShot. Implements rendering of targets and shots.",
     "repository":{ "type":"git",
