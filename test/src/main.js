@@ -35,6 +35,9 @@ var scaler = new LiveShot.targets.getScaler(targetID);
 var shotRenderer = new LiveShot.ShotRenderer()
     .setContext(ctx)
     .setRect(rect);
+var triangleRenderer = new LiveShot.TriangleRenderer()
+    .setContext(ctx)
+    .setRect(rect);
 
 var resultBuilder = new ResultBuilder();
 
@@ -61,6 +64,7 @@ function render() {
     var scale = scaler.setShots(shots).getScale();
     targetRenderer.setScale(scale).render();
     shotRenderer.setShots(shots).setScale(scale).render();
+    triangleRenderer.render();
 }
 
 setInterval(render, 500);
