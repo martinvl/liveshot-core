@@ -35,7 +35,7 @@ TriangleRenderer.prototype.draw = function () {
     ctx.save();
 
     ctx.translate(this.rect.x, this.rect.y);
-    ctx.scale(this.rect.width, this.rect.height);
+    ctx.scale(this.rect.width, this.rect.width);
 
     ctx.beginPath();
     ctx.moveTo(1, 0);
