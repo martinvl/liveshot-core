@@ -87,6 +87,40 @@ Subclasses should override the following methods:
     `scale = 2` the target should fit exactly into the rectangle with size
     `2*width x 2*height`.
 
+TriangleRenderer
+----------------
+Handles rendering of upper-right hand triangles, used for non-marking series.
+Inherits all properties and methods of `Renderer`.
+```javascript
+var renderer = new TriangleRenderer();
+
+renderer.setContext(ctx)
+    .setStyle({
+            color:'rgb(150, 150, 150)',
+            borderColor:'rgb(50, 50, 50)',
+            size:.2
+            })
+    .setRect({
+        x:100,
+        y:150,
+        width:400,
+        height:300
+    })
+    .render();
+```
+
+**Public properties**  
+* < _object_ >`style`
+    * < _string_ >`color`, the color of the triangle
+    * < _string_ >`borderColor`, the color of the border (facing the target) of
+    the triangle
+
+**Setters**  
+Return pointer to the renderer for convenience.
+* **setStyle**(< _object_ >style) - ( _TriangleRenderer_ )  
+    `style` should an object containing some (or all) of the style keywords
+    described above
+
 ShotRenderer
 ------------
 Handles rendering of shots. Inherits all properties and methods of `Renderer`.
