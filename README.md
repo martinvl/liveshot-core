@@ -114,6 +114,8 @@ renderer.setContext(ctx)
     * < _string_ >`color`, the color of the triangle
     * < _string_ >`borderColor`, the color of the border (facing the target) of
     the triangle
+    * < _number_ >`size`, the size of the triangle relative to the width of the
+    rect
 
 **Setters**  
 Return pointer to the renderer for convenience.
