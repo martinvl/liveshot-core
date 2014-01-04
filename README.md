@@ -230,7 +230,7 @@ Builds `RingTarget` objects needed by `RingTargetScaler` and
 ```javascript
 var target = new RingTargetBuilder()
     .setRingSizes([1., .9, .8, .7, .6, .5, .4, .3, .2, .1, .05])
-    .setBlackSize(.4)
+    .setFrontSize(.4)
     .setNumbersFrom(1)
     .setNumbersTo(9)
     .getTarget();
