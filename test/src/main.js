@@ -9,43 +9,47 @@ canvas.width = width;
 canvas.height = height;
 
 document.body.appendChild(canvas);
+try {
+    G_vmlCanvasManager.initElement(canvas);
+} catch (err) {};
+
 var ctx = canvas.getContext('2d');
 var rect = {x:0, y:0, width:width, height:height};
 
 /*
-var target = LiveShot.targets.NO_DFS_100M;
-var resultBuilder = new ResultBuilder();
+   var target = LiveShot.targets.NO_DFS_100M;
+   var resultBuilder = new ResultBuilder();
 
-var targetRenderer = new LiveShot.RingTargetRenderer()
-    .setContext(ctx)
-    .setRect(rect)
-    .setTarget(target);
-var scaler = new LiveShot.RingTargetScaler()
-    .setTarget(target);
-var shotRenderer = new LiveShot.ShotRenderer()
-    .setContext(ctx)
-    .setRect(rect);
-    */
+   var targetRenderer = new LiveShot.RingTargetRenderer()
+   .setContext(ctx)
+   .setRect(rect)
+   .setTarget(target);
+   var scaler = new LiveShot.RingTargetScaler()
+   .setTarget(target);
+   var shotRenderer = new LiveShot.ShotRenderer()
+   .setContext(ctx)
+   .setRect(rect);
+   */
 
 var targetID = 'NO_DFS_100M';
-var targetRenderer = new LiveShot.targets.getRenderer(targetID)
-    .setContext(ctx)
+    var targetRenderer = new LiveShot.targets.getRenderer(targetID)
+.setContext(ctx)
     .setRect(rect);
-var scaler = new LiveShot.targets.getScaler(targetID);
-var shotRenderer = new LiveShot.ShotRenderer()
-    .setContext(ctx)
+    var scaler = new LiveShot.targets.getScaler(targetID);
+    var shotRenderer = new LiveShot.ShotRenderer()
+.setContext(ctx)
     .setRect(rect);
-var triangleRenderer = new LiveShot.TriangleRenderer()
-    .setContext(ctx)
+    var triangleRenderer = new LiveShot.TriangleRenderer()
+.setContext(ctx)
     .setRect(rect);
 
-var resultBuilder = new ResultBuilder();
+    var resultBuilder = new ResultBuilder();
 
-function render() {
-    ctx.clearRect(rect.x, rect.y, rect.width, rect.height);
+    function render() {
+        ctx.clearRect(rect.x, rect.y, rect.width, rect.height);
 
-    var r = Math.random();
-    var value = Math.floor(Math.random() * 100)/10;
+        var r = Math.random();
+        var value = Math.floor(Math.random() * 100)/10;
     var seriesSum = Math.floor(Math.random()*100);
     var totalSum = Math.floor(2.5*seriesSum);
 
