@@ -198,6 +198,8 @@ renderer.setContext(ctx)
     * < _boolean_ >`drawFullTarget`, `true` if the entire target should be
     drawn, even if it extends outside the drawing rectangle. `false` if only
     rings that fully fit inside the rectangle should be drawn.
+    * < _number_ >`ringLineWidth`, the rendered line width of the rings  
+            default value is `1`
 * < _object_ >`target`, should be object created by RingTargetBuilder
 
 **Setters**  

@@ -4,6 +4,7 @@ function RingTargetRenderer() {
     TargetRenderer.prototype.constructor.apply(this);
 
     this.style.drawFullTarget = false;
+    this.style.ringLineWidth = 1;
 }
 
 RingTargetRenderer.prototype = new TargetRenderer();
@@ -60,11 +61,11 @@ RingTargetRenderer.prototype.drawRings = function () {
             continue;
         }
 
-        if (ringSize > frontSize) {
-            ctx.strokeStyle = this.style.frontColor;
-        } else {
-            ctx.strokeStyle = this.style.backColor;
-        }
+        var isFrontRing = ringSize > frontSize;
+        ctx.strokeStyle = isFrontRing
+            ? this.style.frontColor
+            : this.style.backColor;
+        ctx.lineWidth = this.style.ringLineWidth;
 
         ctx.beginPath();
         ctx.arc(0, 0, ringSize * size, 0, Math.PI*2, true);
