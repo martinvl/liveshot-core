@@ -5,7 +5,8 @@ var targets =  {
     'NO_DFS_100M':require('./dfs/NO_DFS_100M'),
     'NO_DFS_200M':require('./dfs/NO_DFS_200M'),
     'NO_DFS_300M':require('./dfs/NO_DFS_300M'),
-    'NO_DFS_15M':require('./dfs/NO_DFS_15M')
+    'NO_DFS_15M':require('./dfs/NO_DFS_15M'),
+    'UNKNOWN':require('./dfs/NO_DFS_100M')
 };
 
 function getTarget(targetID) {
@@ -18,6 +19,7 @@ function getScaler(targetID) {
         case 'NO_DFS_200M':
         case 'NO_DFS_300M':
         case 'NO_DFS_15M':
+        case 'UNKNOWN':
             return new RingTargetScaler()
                 .setTarget(getTarget(targetID));
     }
@@ -29,6 +31,7 @@ function getRenderer(targetID) {
         case 'NO_DFS_200M':
         case 'NO_DFS_300M':
         case 'NO_DFS_15M':
+        case 'UNKNOWN':
             return new RingTargetRenderer()
                 .setTarget(getTarget(targetID));
     }
